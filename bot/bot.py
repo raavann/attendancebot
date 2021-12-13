@@ -107,35 +107,3 @@ class meet_bot:
     def quit(self):
         bot = self.bot
         bot.quit()
-
-
-if(False):
-    link = 'https://meet.google.com/qzy-giih-mke'
-    start_time = '03-2324'
-    end_time = '2430-32343'
-
-    obj = meet_bot()
-
-    login = True
-    get_link = True
-
-    EMAIL = os.getenv('EMAIL') or None
-    PASSWORD = os.getenv('PASSWORD') or None
-
-    # if either one is true run again!
-    # Only close when both returns false
-    while login or get_link:
-        sleep(5)
-        login = obj.login(EMAIL, PASSWORD)
-
-        sleep(5)
-        get_link = obj.get_meet(link)
-
-
-    sleep(5)
-    join_meet = obj.join()  # -2 = no join button exist
-                            # -1 = no leave button but join exist and clicked
-                            # 0 = everything nice
-    if(join_meet != 0):
-        # close browser and do everything again
-        x = 'g'

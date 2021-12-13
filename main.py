@@ -1,6 +1,5 @@
 from os import getenv
 from dotenv import load_dotenv
-from bot.bot import meet_bot
 from dscrd.discord import class_year_error, something_wrong, start, email_pass_error, joined_class, leave_class
 
 from data.data import update_table
@@ -36,7 +35,6 @@ def checkup():
     table = CLASS + SECTION + YEAR
 
     return table
-
 
 def login_getlink(bot):
     login = True
@@ -79,9 +77,6 @@ def join_meeting(bot, period):
         return join_meet
         
 
-
-
-
 table = checkup()
 start()
 
@@ -116,7 +111,5 @@ while(True):
             # quit class
             bot.quit()
             leave_class(period['sub'], datetime.now().strftime("%m/%d/%Y, %H:%M"))
-
-
 
 something_wrong()
